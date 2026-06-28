@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from typing import Iterable
 
-from schemas import Candidate, MarcaConfig, TraversalTask
+from marca_reproduction.schemas import Candidate, MarcaConfig, TraversalTask
 
 
 CONTROLLER_SYSTEM_PROMPT = """

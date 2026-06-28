@@ -3,7 +3,12 @@ from __future__ import annotations
 from math import sqrt
 from typing import Dict, Iterable, List, Mapping, Sequence
 
-from schemas import FunctionCall, ServiceSnapshot, ToolObservation, clamp01
+from marca_reproduction.schemas import (
+    FunctionCall,
+    ServiceSnapshot,
+    ToolObservation,
+    clamp01,
+)
 
 
 class InMemoryObservability:

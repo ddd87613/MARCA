@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+from _bootstrap import PROJECT_ROOT  # noqa: F401
+
 import argparse
 import csv
 from dataclasses import dataclass
@@ -7,9 +9,9 @@ from pathlib import Path
 from typing import Dict, Iterable, List, Mapping, Sequence
 
 
-BASE_DIR = Path(__file__).resolve().parent
-GROUNDTRUTH_PATH = BASE_DIR / "trainticket_groundtruth.csv"
-PREDICTIONS_PATH = BASE_DIR / "trainticket_predictions.csv"
+BASE_DIR = Path(__file__).resolve().parents[1]
+GROUNDTRUTH_PATH = BASE_DIR / "data" / "trainticket_groundtruth.csv"
+PREDICTIONS_PATH = BASE_DIR / "data" / "trainticket_predictions.csv"
 EVALUATION_POINTS = 10_000
 MAX_BUCKET_SPAN = 80
 

@@ -1,12 +1,14 @@
-from evaluation import estimate_token_reduction, run_ablation_suite
-from paper_details import (
+from _bootstrap import PROJECT_ROOT  # noqa: F401
+
+from evaluation.metrics import estimate_token_reduction, run_ablation_suite
+from evaluation.paper_details import (
     ABLATION_FINDINGS,
     DATASETS,
     SENSITIVITY_TABLE,
     format_table_1,
 )
-from sample_cases import create_synthetic_fault_cases
-from schemas import MarcaConfig
+from evaluation.sample_cases import create_synthetic_fault_cases
+from marca_reproduction.schemas import MarcaConfig
 
 
 def main() -> None:

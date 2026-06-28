@@ -6,7 +6,7 @@ import urllib.request
 from abc import ABC, abstractmethod
 from typing import Mapping, Optional
 
-from schemas import LLMCallRecord, MarcaConfig
+from marca_reproduction.schemas import LLMCallRecord, MarcaConfig
 
 
 class BaseLLMClient(ABC):

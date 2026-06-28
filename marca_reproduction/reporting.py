@@ -1,8 +1,8 @@
 from __future__ import annotations
 
-from fault_classifier import classify_result
-from paper_details import FAILURE_BOUNDARIES, TOKEN_EFFICIENCY, token_reduction
-from schemas import DiagnosisResult, MarcaConfig
+from evaluation.fault_classifier import classify_result
+from evaluation.paper_details import FAILURE_BOUNDARIES, TOKEN_EFFICIENCY, token_reduction
+from marca_reproduction.schemas import DiagnosisResult, MarcaConfig
 
 
 def build_diagnosis_report(result: DiagnosisResult, config: MarcaConfig) -> str:

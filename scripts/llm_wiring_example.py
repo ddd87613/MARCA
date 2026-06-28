@@ -1,4 +1,6 @@
-from marca_core import (
+from _bootstrap import PROJECT_ROOT  # noqa: F401
+
+from marca_reproduction.core import (
     InMemoryObservability,
     Marca,
     MarcaConfig,

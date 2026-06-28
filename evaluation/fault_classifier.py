@@ -3,7 +3,7 @@ from __future__ import annotations
 from dataclasses import dataclass
 from typing import List, Optional
 
-from schemas import Candidate, DiagnosisResult
+from marca_reproduction.schemas import Candidate, DiagnosisResult
 
 
 @dataclass(frozen=True)

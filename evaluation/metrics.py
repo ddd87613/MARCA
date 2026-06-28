@@ -3,11 +3,11 @@ from __future__ import annotations
 from dataclasses import dataclass
 from typing import Dict, List, Mapping, Optional, Sequence
 
-from agents import Marca
-from fault_classifier import classify_result
-from llm_client import BaseLLMClient
-from schemas import DiagnosisResult, MarcaConfig
-from tools import InMemoryObservability
+from evaluation.fault_classifier import classify_result
+from marca_reproduction.agents import Marca
+from marca_reproduction.llm_client import BaseLLMClient
+from marca_reproduction.schemas import DiagnosisResult, MarcaConfig
+from marca_reproduction.tools import InMemoryObservability
 
 
 @dataclass(frozen=True)

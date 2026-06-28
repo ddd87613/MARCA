@@ -2,11 +2,13 @@ from __future__ import annotations
 
 from typing import Dict, Sequence, Tuple
 
-from agents import Marca
-from evaluation import EvaluationResult, FaultCase, evaluate_cases, run_ablation_suite
-from fault_classifier import FaultClassification, classify_candidate, classify_result
-from llm_client import BaseLLMClient, NoOpLLMClient, OpenAICompatibleLLMClient
-from paper_details import (
+from evaluation.fault_classifier import (
+    FaultClassification,
+    classify_candidate,
+    classify_result,
+)
+from evaluation.metrics import EvaluationResult, FaultCase, evaluate_cases, run_ablation_suite
+from evaluation.paper_details import (
     ABLATION_FINDINGS,
     DATASETS,
     FAILURE_BOUNDARIES,
@@ -15,8 +17,14 @@ from paper_details import (
     TABLE_1_RESULTS,
     TOKEN_EFFICIENCY,
 )
-from reporting import build_diagnosis_report
-from schemas import (
+from marca_reproduction.agents import Marca
+from marca_reproduction.llm_client import (
+    BaseLLMClient,
+    NoOpLLMClient,
+    OpenAICompatibleLLMClient,
+)
+from marca_reproduction.reporting import build_diagnosis_report
+from marca_reproduction.schemas import (
     Candidate,
     DiagnosisResult,
     FunctionCall,
@@ -26,7 +34,7 @@ from schemas import (
     ToolObservation,
     normalize_weights,
 )
-from tools import InMemoryObservability
+from marca_reproduction.tools import InMemoryObservability
 
 
 def update_modality_weights_ema(

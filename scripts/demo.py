@@ -1,4 +1,6 @@
-from marca_core import (
+from _bootstrap import PROJECT_ROOT  # noqa: F401
+
+from marca_reproduction.core import (
     InMemoryObservability,
     Marca,
     MarcaConfig,
@@ -84,9 +86,9 @@ def main() -> None:
         print(f"  {rank}. {candidate.service:16s} score={candidate.score:.3f} [{parts}]")
 
     print("\nPrompt templates are defined in prompts.py.")
-    print("Run inspect_prompts.py to print the full Controller/Executor/Voter prompts.")
-    print("See llm_wiring_example.py for the explicit LLM integration point.")
-    print("Run paper_suite.py to inspect paper tables, sensitivity, and ablation scaffolding.")
+    print("Run scripts/inspect_prompts.py to print the full Controller/Executor/Voter prompts.")
+    print("See scripts/llm_wiring_example.py for the explicit LLM integration point.")
+    print("Run scripts/paper_suite.py to inspect paper tables, sensitivity, and ablation scaffolding.")
 
 
 if __name__ == "__main__":

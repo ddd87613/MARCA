@@ -10,29 +10,24 @@ The implementation focuses on the core workflow:
 3. Voter ranks root-cause candidates with weighted multi-modal evidence.
 4. Optional LLM calls can be plugged in through `llm_client.py`.
 
-## Main Files
+## Layout
 
-- `marca_core.py`: public entry point.
-- `agents.py`: Controller, Executor, and Voter.
-- `tools.py`: metric, log, trace, and retcode function-call tools.
-- `prompts.py`: full agent prompts and MARCA reasoning guidelines.
-- `llm_client.py`: LLM integration point.
-- `demo.py`: runnable payment-timeout example.
-- `evaluate_trainticket_table1.py`: TrainTicket Table I evaluation script.
-- `trainticket_groundtruth.csv`: TrainTicket groundtruth fixture.
-- `trainticket_predictions.csv`: TrainTicket prediction fixture.
+- `marca_reproduction/`: core algorithm, agents, prompts, tools, and LLM hook.
+- `evaluation/`: metrics, paper tables, fault classification, and sample cases.
+- `scripts/`: runnable demo and evaluation scripts.
+- `data/`: TrainTicket CSV fixtures.
 
 ## Run Demo
 
 ```bash
 cd /Users/phoebe/Documents/Codex/2026-06-28/gen/outputs/marca_reproduction
-python3 demo.py
+python3 scripts/demo.py
 ```
 
 ## Reproduce TrainTicket Table I
 
 ```bash
-python3 evaluate_trainticket_table1.py
+python3 scripts/evaluate_trainticket_table1.py
 ```
 
 Expected MARCA results:
@@ -48,7 +43,7 @@ TrainTicket project. The CSV files do not include a weight column.
 ## Inspect Prompts
 
 ```bash
-python3 inspect_prompts.py
+python3 scripts/inspect_prompts.py
 ```
 
 ## LLM Hook
@@ -57,7 +52,7 @@ By default, the code runs without an LLM. To connect a local vLLM or any
 OpenAI-compatible endpoint:
 
 ```python
-from marca_core import Marca, MarcaConfig, OpenAICompatibleLLMClient
+from marca_reproduction.core import Marca, MarcaConfig, OpenAICompatibleLLMClient
 
 config = MarcaConfig(
     llm_enabled=True,
@@ -74,6 +69,6 @@ LLM prompts and responses are recorded in `DiagnosisResult.llm_calls`.
 ## Notes
 
 - The core algorithm is runnable without external dependencies.
-- `paper_suite.py` prints paper tables and a small synthetic ablation suite.
+- `scripts/paper_suite.py` prints paper tables and a small synthetic ablation suite.
 - The TrainTicket evaluation fixture is constructed to reproduce the Table I
   numbers exactly.

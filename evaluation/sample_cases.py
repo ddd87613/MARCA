@@ -2,9 +2,9 @@ from __future__ import annotations
 
 from typing import List
 
-from evaluation import FaultCase
-from schemas import ServiceSnapshot
-from tools import InMemoryObservability
+from evaluation.metrics import FaultCase
+from marca_reproduction.schemas import ServiceSnapshot
+from marca_reproduction.tools import InMemoryObservability
 
 
 BASELINE_LATENCY = [95, 100, 102, 98, 101, 99]

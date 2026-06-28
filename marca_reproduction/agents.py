@@ -3,9 +3,13 @@ from __future__ import annotations
 from collections import deque
 from typing import Deque, Dict, List, Mapping, Optional, Sequence, Tuple
 
-from llm_client import BaseLLMClient, NoOpLLMClient
-from prompts import build_controller_prompt, build_executor_prompt, build_voter_prompt
-from schemas import (
+from marca_reproduction.llm_client import BaseLLMClient, NoOpLLMClient
+from marca_reproduction.prompts import (
+    build_controller_prompt,
+    build_executor_prompt,
+    build_voter_prompt,
+)
+from marca_reproduction.schemas import (
     Candidate,
     DiagnosisResult,
     EvidenceBundle,
@@ -15,7 +19,7 @@ from schemas import (
     TraversalTask,
     clamp01,
 )
-from tools import (
+from marca_reproduction.tools import (
     InMemoryObservability,
     code_similarity,
     evidence_scores_from_observations,
